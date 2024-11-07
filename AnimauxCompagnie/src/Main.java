@@ -16,14 +16,14 @@ public class Main {
         // Partie chien.
         Chien toutou = new Chien("Idefix",  10, "West highland white terrier");
         System.out.println(toutou);
-        toutou.manger("sanglier");
+        toutou.manger("du sanglier");
         toutou.dormir();
         toutou.aboyer();
 
         // Partie oiseau.
         Oiseau birbjima = new Oiseau("Birbjima", 5, 200);
         System.out.println(birbjima);
-        birbjima.manger("graines");
+        birbjima.manger("des graines");
         birbjima.dormir();
         birbjima.senvoler();
     }
