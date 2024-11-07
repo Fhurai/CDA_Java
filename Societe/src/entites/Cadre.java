@@ -12,19 +12,19 @@ public class Cadre extends Employe{
         setSalaire(salaire);
     }
 
-    public double getSalaire() {
+    public final double getSalaire() {
         return salaire;
     }
 
-    public void setSalaire(double salaire) {
+    public final void setSalaire(double salaire) {
         this.salaire = salaire;
     }
 
-    public boolean isDirigeService() {
+    public final boolean isDirigeService() {
         return dirigeService;
     }
 
-    public void setDirigeService(boolean dirigeService) {
+    public final void setDirigeService(boolean dirigeService) {
         this.dirigeService = dirigeService;
     }
 
