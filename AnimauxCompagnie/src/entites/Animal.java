@@ -16,7 +16,7 @@ public abstract class Animal {
      * @param espece Espèce de l'animal.
      * @param age Age de l'animal.
      */
-    public Animal(String nom, String espece, int age) {
+    public Animal(String nom, String espece, int age) throws AnimalException {
         setNom(nom);
         setEspece(espece);
         setAge(age);
@@ -40,7 +40,14 @@ public abstract class Animal {
      * Setter nom
      * @param nom Nom de l'animal.
      */
-    public void setNom(String nom) {
+    public void setNom(String nom) throws AnimalException {
+        if((nom == null) || (nom.isEmpty())){
+            throw new AnimalException("Le nom est vide!");
+        }
+        if(!Character.isUpperCase(nom.charAt(0))){
+            throw new AnimalException("La première lettre du nom n'est pas en" +
+                    " majuscule!");
+        }
         this.nom = nom;
     }
 
@@ -72,7 +79,10 @@ public abstract class Animal {
      * Setter age
      * @param age Age de l'animal.
      */
-    public void setAge(int age) {
+    public void setAge(int age) throws AnimalException {
+        if(age < 0){
+            throw new AnimalException("L'age est négatif!");
+        }
         this.age = age;
     }
 

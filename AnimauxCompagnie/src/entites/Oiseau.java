@@ -13,7 +13,7 @@ public class Oiseau extends Animal {
      * @param age Age de l'oiseau
      * @param nombreDePlumes Nombre de plumes de l'oiseau.
      */
-    public Oiseau(String nom, int age, int nombreDePlumes) {
+    public Oiseau(String nom, int age, int nombreDePlumes) throws AnimalException {
         super(nom, "oiseau", age);
         setNombreDePlumes(nombreDePlumes);
     }
@@ -30,7 +30,10 @@ public class Oiseau extends Animal {
      * Setter nombre de plumes.
      * @param nombreDePlumes Nombre de plumes de l'oiseau.
      */
-    public void setNombreDePlumes(int nombreDePlumes) {
+    public void setNombreDePlumes(int nombreDePlumes) throws AnimalException {
+        if (nombreDePlumes < 0){
+            throw new AnimalException("Le nombre de plumes est négatif!");
+        }
         this.nombreDePlumes = nombreDePlumes;
     }
 

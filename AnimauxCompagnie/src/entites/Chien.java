@@ -13,7 +13,7 @@ public class Chien extends Animal {
      * @param age Age du chien
      * @param race Race du chien
      */
-    public Chien(String nom, int age, String race) {
+    public Chien(String nom, int age, String race) throws AnimalException {
         super(nom, "chien", age);
         setRace(race);
     }
@@ -30,7 +30,10 @@ public class Chien extends Animal {
      * Setter race
      * @param race Race du chien
      */
-    public void setRace(String race) {
+    public void setRace(String race) throws AnimalException {
+        if((race == null) || (race.length() < 3)){
+            throw new AnimalException("Race nom identifiable!");
+        }
         this.race = race;
     }
 
