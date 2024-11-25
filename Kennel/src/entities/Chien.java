@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 /**
  * Classe Chien
  */
@@ -13,9 +15,13 @@ public class Chien extends Animal {
      * @param dateNaissance Date de naissance du chien
      * @param race Race du chien
      */
-    public Chien(String nom, String dateNaissance, String race) throws KennelEntitiesException {
+    public Chien(String nom, LocalDate dateNaissance, String race) throws KennelEntitiesException {
         super(nom, "chien", dateNaissance);
         setRace(race);
+    }
+
+    public Chien() {
+        super();
     }
 
     /**

@@ -24,7 +24,7 @@ public abstract class Animal {
      * @param espece Espèce de l'animal.
      * @param dateNaissance Date de naissance de l'animal.
      */
-    public Animal(String nom, String espece, String dateNaissance) throws KennelEntitiesException {
+    public Animal(String nom, String espece, LocalDate dateNaissance) throws KennelEntitiesException {
         setNom(nom);
         setEspece(espece);
         setDateNaissance(dateNaissance);
@@ -73,6 +73,9 @@ public abstract class Animal {
      * @param espece Espèce de l'animal
      */
     public void setEspece(String espece) {
+        if((espece == null) || (espece.isEmpty())){
+            throw new KennelEntitiesException("L'espèce est vide!");
+        }
         if(!Patterns.PATTERN_ESPECE.matcher(espece).matches()){
             throw new KennelEntitiesException("L'espèce ne doit pas " +
                     "commencer par une majuscule, ne contenir que des " +
@@ -85,12 +88,11 @@ public abstract class Animal {
         return dateNaissance;
     }
 
-    public void setDateNaissance(String dateNaissance) throws KennelEntitiesException {
-        if(!Patterns.PATTERN_DATE_NAISSANCE.matcher(dateNaissance).matches()){
-            throw new KennelEntitiesException("La date doit etre au format " +
-                    "jj/mm/aaaa");
+    public void setDateNaissance(LocalDate dateNaissance) throws KennelEntitiesException {
+        if((dateNaissance == null)){
+            throw new KennelEntitiesException("Le nom est vide!");
         }
-        this.dateNaissance = LocalDate.parse(dateNaissance, Formats.FORMAT_DDMMYYYY);
+        this.dateNaissance = dateNaissance;
     }
 
     /**

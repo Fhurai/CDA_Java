@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Kennel:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Kennel_jar</output-path>
+    <root id="archive" name="Kennel.jar">
+      <element id="module-output" name="Kennel" />
+    </root>
+  </artifact>
+</component>
