@@ -90,7 +90,7 @@ public abstract class Animal {
 
     public void setDateNaissance(LocalDate dateNaissance) throws KennelEntitiesException {
         if((dateNaissance == null)){
-            throw new KennelEntitiesException("Le nom est vide!");
+            throw new KennelEntitiesException("La date de naissance est vide!");
         }
         this.dateNaissance = dateNaissance;
     }

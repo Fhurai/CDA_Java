@@ -25,6 +25,10 @@ public class LogCreator {
         LogCreator.publisher.log(Level.INFO, "Software running");
     }
 
+    public static void info(String msg){
+        publisher.log(Level.INFO, msg);
+    }
+
     public static void stop(){
         LogCreator.publisher.log(Level.INFO, "Software stopped");
     }

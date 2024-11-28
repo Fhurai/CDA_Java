@@ -22,7 +22,7 @@ class OiseauTest {
 
     @ParameterizedTest
     @NullAndEmptySource
-    @ValueSource(strings = {"titi", "G"})
+    @ValueSource(strings = {"titi", "G", "Hôô"})
     void testSetNomInvalid(String nom) {
         assertThrows(KennelEntitiesException.class, () -> oiseau.setNom(nom));
     }

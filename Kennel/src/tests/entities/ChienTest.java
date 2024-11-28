@@ -30,7 +30,7 @@ class ChienTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Idefix", "Milou", "Rintintin", "Go"})
+    @ValueSource(strings = {"Idéfix", "Milou", "Rintintin", "Go"})
     void testSetNomValid(String nom) {
         assertDoesNotThrow(() -> chien.setNom(nom));
         assertEquals(nom, chien.getNom());
