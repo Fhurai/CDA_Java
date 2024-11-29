@@ -47,7 +47,6 @@ public class Form extends JFrame {
         setContentPane(contentPane);
         getRootPane().setDefaultButton(buttonOK);
         this.setSize(600, 300);
-//        this.setSize(400, 300);
         this.setLocationRelativeTo(null);
 
         tfNom.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -63,10 +62,12 @@ public class Form extends JFrame {
 
             if (this.espece == Espece.Chien) {
                 tfRace.setText(((Chien) this.animal).getRace());
-                pPlumes.setVisible(false);
+                lPlumes.setVisible(false);
+                tfPlumes.setVisible(false);
             } else if (this.espece == Espece.Oiseau) {
                 tfPlumes.setText(String.valueOf(((Oiseau) this.animal).getNombreDePlumes()));
-                pRace.setVisible(false);
+                lRace.setVisible(false);
+                tfRace.setVisible(false);
             }
 
             if (this.action == Action.Suppression) {
@@ -79,10 +80,10 @@ public class Form extends JFrame {
 
             if (this.espece == Espece.Chien) {
                 lPlumes.setVisible(false);
-                pPlumes.setVisible(false);
+                tfPlumes.setVisible(false);
             } else if (this.espece == Espece.Oiseau) {
                 lRace.setVisible(false);
-                pRace.setVisible(false);
+                tfRace.setVisible(false);
             }
         }
     }
